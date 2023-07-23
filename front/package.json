@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --base-href=/cypress-gestion-stock/ --output-path=../docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
