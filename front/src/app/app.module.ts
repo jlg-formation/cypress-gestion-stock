@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
+import { ArticleService } from './services/article.service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LegalComponent],
@@ -18,7 +20,9 @@ import { LegalComponent } from './routes/legal/legal.component';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    { provide: ArticleService, useClass: environment.articleServiceClass },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
