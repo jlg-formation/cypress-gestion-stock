@@ -1,0 +1,61 @@
+div.content {
+  display: flex;
+  flex-flow: column;
+
+  nav {
+    display: flex;
+    gap: 0.3em;
+  }
+
+  div.error {
+    font-weight: bold;
+    height: 2em;
+    display: flex;
+    align-items: center;
+  }
+
+  table {
+    border: 0.1em solid #aaa;
+
+    border-radius: 0.3em;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+
+    th,
+    td {
+      padding: 0.5em 1em;
+    }
+
+    thead {
+      background: #aaa;
+    }
+
+    tbody {
+      cursor: pointer;
+      tr:nth-child(even) {
+        background: #eee;
+      }
+
+      tr:hover {
+        background: #ddd;
+      }
+
+      tr.selected {
+        background: #ccc;
+      }
+
+      .price,
+      .qty {
+        text-align: right;
+      }
+
+      div.loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+      }
+    }
+  }
+}
