@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddComponent } from './add.component';
-import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
+import { AddComponent } from './add.component';
 
 describe('AddComponent', () => {
   let component: AddComponent;

@@ -5,9 +5,9 @@ import {
   faRotateRight,
   faTrashCan,
 } from '@fortawesome/free-solid-svg-icons';
+import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
 import { Article } from '../interfaces/article';
 import { ArticleService } from '../services/article.service';
-import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-stock',

@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpArticleService, url } from './http-article.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { newArticle } from 'src/test/data';
+import { HttpArticleService, url } from './http-article.service';
 
 describe('HttpArticleService', () => {
   let service: HttpArticleService;

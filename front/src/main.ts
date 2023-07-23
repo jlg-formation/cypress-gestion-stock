@@ -1,7 +1,7 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
 import { isDevMode } from '@angular/core';
+import { AppModule } from './app/app.module';
 
 if (!isDevMode()) {
   console.log = () => {

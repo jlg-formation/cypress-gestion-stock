@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StockComponent } from './stock.component';
 import { AddComponent } from './add/add.component';
+import { StockComponent } from './stock.component';
 
 const routes: Routes = [
   { path: '', component: StockComponent },

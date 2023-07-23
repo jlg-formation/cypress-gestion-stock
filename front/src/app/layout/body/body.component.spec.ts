@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BodyComponent } from './body.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BodyComponent } from './body.component';
 
 describe('BodyComponent', () => {
   let component: BodyComponent;

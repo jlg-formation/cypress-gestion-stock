@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Article, NewArticle } from '../interfaces/article';
 import { BehaviorSubject, Observable, of, tap } from 'rxjs';
+import { Article, NewArticle } from '../interfaces/article';
 
 let articles: Article[] = [
   { id: 'a1', name: 'Tournevis', price: 2.99, qty: 123 },

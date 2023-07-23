@@ -5,10 +5,10 @@ import {
   tick,
 } from '@angular/core/testing';
 
-import { StockComponent } from './stock.component';
 import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
-import { a1 } from 'src/test/data';
 import { throwError } from 'rxjs';
+import { a1 } from 'src/test/data';
+import { StockComponent } from './stock.component';
 
 describe('StockComponent', () => {
   let component: StockComponent;
