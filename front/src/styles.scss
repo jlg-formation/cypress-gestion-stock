@@ -18,6 +18,10 @@ main {
   max-width: 100ch;
   margin: 0 auto;
 
+  h1 {
+    text-align: center;
+  }
+
   p {
     align-self: flex-start;
   }
