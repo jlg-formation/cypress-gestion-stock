@@ -7,5 +7,16 @@
   </head>
   <body>
     <p>Page non trouvée... 😕</p>
+    <script>
+      const baseHref = "/cypress-gestion-stock/";
+      const pages = ["legal", "stock", "stock/add"];
+
+      const path = window.location.pathname.substring(baseHref.length);
+      console.log("path: ", path);
+
+      if (pages.includes(path)) {
+        window.location = baseHref;
+      }
+    </script>
   </body>
 </html>
