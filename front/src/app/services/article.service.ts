@@ -3,8 +3,22 @@ import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { Article, NewArticle } from '../interfaces/article';
 
 let articles: Article[] = [
-  { id: 'a1', name: 'Tournevis', price: 2.99, qty: 123, category: 'jardin' },
-  { id: 'a2', name: 'Pelle', price: 1.5, qty: 14, category: 'jardin' },
+  {
+    id: 'a1',
+    name: 'Tournevis',
+    price: 2.99,
+    qty: 123,
+    category: 'jardin',
+    used: false,
+  },
+  {
+    id: 'a2',
+    name: 'Pelle',
+    price: 1.5,
+    qty: 14,
+    category: 'jardin',
+    used: true,
+  },
 ];
 
 @Injectable({

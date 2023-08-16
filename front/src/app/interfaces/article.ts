@@ -1,6 +1,7 @@
 export interface Article {
   id: string;
   name: string;
+  used: boolean;
   price: number;
   qty: number;
   category: Category;

@@ -13,6 +13,12 @@
       <span>Quantité : {{ f.controls["qty"].value }} </span>
       <input type="range" formControlName="qty" min="0" max="100" step="1" />
     </label>
+    <div class="radio">
+      <label>
+        <input type="checkbox" formControlName="used" value="used" />
+        <span>Occasion</span>
+      </label>
+    </div>
     <label>
       <span>Category</span>
       <select>
@@ -52,6 +58,6 @@
       ></fa-icon>
       <span>Ajouter</span>
     </button>
-    <!-- {{ f.value | json }} -->
+    {{ f.value | json }}
   </form>
 </main>

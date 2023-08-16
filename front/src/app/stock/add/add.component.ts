@@ -23,6 +23,7 @@ export class AddComponent {
     qty: new FormControl(0, [Validators.required]),
     category: new FormControl('jardin', [Validators.required]),
     expiryDate: new FormControl('', []),
+    used: new FormControl(false),
   });
   faCircleNotch = faCircleNotch;
   faPlus = faPlus;
