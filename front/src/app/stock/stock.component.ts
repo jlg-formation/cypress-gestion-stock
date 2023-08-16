@@ -8,6 +8,7 @@ import {
 import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
 import { Article } from '../interfaces/article';
 import { ArticleService } from '../services/article.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-stock',
@@ -30,7 +31,7 @@ export class StockComponent implements OnInit {
     if (this.articleService.articles$.value === undefined) {
       of(undefined)
         .pipe(
-          delay(300),
+          delay(environment.duration),
           switchMap(() => this.articleService.refresh())
         )
         .subscribe();
@@ -49,7 +50,7 @@ export class StockComponent implements OnInit {
           this.errorMsg = '';
           this.isRefreshing = true;
         }),
-        delay(300),
+        delay(environment.duration),
         switchMap(() => this.articleService.refresh()),
         catchError((err) => {
           console.log('err: ', err);
@@ -71,7 +72,7 @@ export class StockComponent implements OnInit {
           this.errorMsg = '';
           this.isRemoving = true;
         }),
-        delay(300),
+        delay(environment.duration),
         switchMap(() => {
           const ids = [...this.selectedArticles].map((a) => a.id);
           return this.articleService.remove(ids);

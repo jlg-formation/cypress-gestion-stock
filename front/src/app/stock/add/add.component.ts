@@ -5,6 +5,7 @@ import { faCircleNotch, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
 import { NewArticle } from 'src/app/interfaces/article';
 import { ArticleService } from 'src/app/services/article.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-add',
@@ -40,7 +41,7 @@ export class AddComponent {
           this.isAdding = true;
           this.errorMsg = '';
         }),
-        delay(300),
+        delay(environment.duration),
         switchMap(() => this.articleService.add(newArticle)),
         switchMap(() => this.articleService.refresh()),
         switchMap(() => this.router.navigateByUrl('/stock')),
