@@ -21,10 +21,13 @@ export class AddComponent {
     ]),
     price: new FormControl(0, [Validators.required]),
     qty: new FormControl(0, [Validators.required]),
+    category: new FormControl('jardin', [Validators.required]),
+    expiryDate: new FormControl('', []),
   });
-  faPlus = faPlus;
   faCircleNotch = faCircleNotch;
+  faPlus = faPlus;
   isAdding = false;
+  type = new FormControl('');
 
   constructor(
     private readonly articleService: ArticleService,
@@ -32,7 +35,6 @@ export class AddComponent {
   ) {}
 
   submit() {
-    console.log('submit');
     const newArticle: NewArticle = this.f.value as NewArticle;
 
     of(undefined)
@@ -55,5 +57,18 @@ export class AddComponent {
         })
       )
       .subscribe();
+  }
+
+  isInvalid() {
+    if (this.f.invalid) {
+      return true;
+    }
+    if (
+      this.type.value === 'perishable' &&
+      this.f.controls['expiryDate'].value === ''
+    ) {
+      return true;
+    }
+    return false;
   }
 }

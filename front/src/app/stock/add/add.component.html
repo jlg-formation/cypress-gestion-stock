@@ -6,17 +6,46 @@
       <input type="text" formControlName="name" placeholder="Ex: Tournevis" />
     </label>
     <label>
-      <span>Prix</span>
+      <span>Prix (€)</span>
       <input type="number" formControlName="price" />
     </label>
     <label>
-      <span>Quantité</span>
-      <input type="number" formControlName="qty" />
+      <span>Quantité : {{ f.controls["qty"].value }} </span>
+      <input type="range" formControlName="qty" min="0" max="100" step="1" />
     </label>
+    <label>
+      <span>Category</span>
+      <select>
+        <option>Jardin</option>
+        <option>Alimentation</option>
+      </select>
+    </label>
+    <div class="radio">
+      <label>
+        <input type="radio" name="type" value="" [formControl]="type" />
+        <span>Non périssable</span>
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="type"
+          value="perishable"
+          [formControl]="type"
+        />
+        <span>Périssable</span>
+      </label>
+    </div>
+    <div class="date">
+      <label *ngIf="type.value === 'perishable'">
+        <span>Date de péremption</span>
+        <input type="date" formControlName="expiryDate" />
+      </label>
+    </div>
+
     <div class="error">
       {{ errorMsg }}
     </div>
-    <button type="submit" class="primary" [disabled]="f.invalid || isAdding">
+    <button type="submit" class="primary" [disabled]="isInvalid() || isAdding">
       <fa-icon
         [icon]="isAdding ? faCircleNotch : faPlus"
         [spin]="isAdding"

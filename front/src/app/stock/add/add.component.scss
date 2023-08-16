@@ -9,12 +9,50 @@ form {
   label {
     display: flex;
     flex-flow: column;
+    gap: 0.1em;
 
-    input {
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
       border: 0.1em solid #aaa;
       border-radius: 0.3em;
       padding: 0.5em 1em;
     }
+
+    input[type="range"] {
+      border: 0.1em solid #aaa;
+      border-radius: 0.3em;
+    }
+
+    select {
+      border: 0.1em solid #aaa;
+      border-radius: 0.3em;
+      padding: 0.5em 1em;
+
+      appearance: none;
+      option {
+        padding: 0.5em 1em;
+      }
+    }
+  }
+
+  > div.radio {
+    display: flex;
+    flex-flow: column;
+    label {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      span {
+        padding: 0.25em 1em;
+      }
+    }
+  }
+
+  div.date {
+    height: 3em;
+    display: flex;
+    flex-flow: column;
   }
 
   div.error {
